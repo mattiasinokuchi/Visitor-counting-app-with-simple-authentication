@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title> Galejjet </title>
+    </head>
+    <body>
+        <% if (user) { %>
+        <button id="reset" type="submit">Nollställ</button>
+        <% } %>
+        <h1> Galejjet </h1>
+        <fieldset>
+          <legend>Besöksräknare</legend>
+          <% if (user) { %>
+          <button id="in" type="submit">Släpp In</button>
+          <% } %>
+          <p>
+            <span id="inside"></span> inne (totalt 
+            <span id="visits"></span> besök)
+          </p>
+          <% if (user) { %>
+          <button id="out" type="submit">Släpp Ut</button>
+          <% } %>         
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Köhantering</legend>
+        <% if (user) { %>
+        <button id="que">Ge könummer</button>
+        <% } %>
+        <p>
+          Nytt könummer: <span id="lastInQue"></span> 
+        </p>
+        <% if (user) { %>
+        <button id="call">Kalla könummer</button>
+        <% } %>
+        <p>
+          Kallat könummer: <span id="firstInQue"></span> 
+        </p>
+        <p>
+          Kötid: <span id="queTime"></span> minuter 
+        </p>
+      </fieldset>
+        <% if (user) { %>
+        <p> Hello <%= user.name %>! </p>
+        <p> <a href=/auth/logout> Logout </a> </p>
+        <% } else { %>
+        <p> <a href=/auth/login> Login </a> </p>
+        <% } %>
+        <script src="/client.js"></script>
+    </body>
+</html>
