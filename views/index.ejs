@@ -4,33 +4,37 @@
     </head>
     <body>
         <% if (user) { %>
-        <button id="reset" type="submit">Nollställ</button>
+        <button id="reset">Nollställ</button>
+        <% } else { %>
+        <button id="reset" disabled=true hidden>Nollställ</button>
         <% } %>
         <h1> Galejjet </h1>
         <fieldset>
           <legend>Besöksräknare</legend>
           <% if (user) { %>
-          <button id="in" type="submit">Släpp In</button>
+          <button id="in">Släpp In</button>
+          <button id="out">Släpp Ut</button>
+          <% } else { %>
+          <button id="in" disabled=true hidden>Släpp In</button>
+          <button id="out" disabled=true hidden>Släpp Ut</button>
           <% } %>
           <p>
             <span id="inside"></span> inne (totalt 
             <span id="visits"></span> besök)
           </p>
-          <% if (user) { %>
-          <button id="out" type="submit">Släpp Ut</button>
-          <% } %>         
       </fieldset>
       <br>
       <fieldset>
         <legend>Köhantering</legend>
-        <% if (user) { %>
-        <button id="que">Ge könummer</button>
-        <% } %>
         <p>
           Nytt könummer: <span id="lastInQue"></span> 
         </p>
         <% if (user) { %>
+        <button id="que">Ge könummer</button>
         <button id="call">Kalla könummer</button>
+        <% } else { %>
+        <button id="que" dissabled=true hidden>Ge könummer</button>
+        <button id="call" dissabled=true hidden>Kalla könummer</button>
         <% } %>
         <p>
           Kallat könummer: <span id="firstInQue"></span> 
@@ -39,12 +43,12 @@
           Kötid: <span id="queTime"></span> minuter 
         </p>
       </fieldset>
-        <% if (user) { %>
-        <p> Hello <%= user.name %>! </p>
-        <p> <a href=/auth/logout> Logout </a> </p>
-        <% } else { %>
-        <p> <a href=/auth/login> Login </a> </p>
-        <% } %>
-        <script src="/client.js"></script>
+      <% if (user) { %>
+      <p> Hello <%= user.name %>! </p>
+      <p> <a href=/auth/logout> Logout </a> </p>
+      <% } else { %>
+      <p> <a href=/auth/login> Login </a> </p>
+      <% } %>
+      <script src="/client.js"></script>
     </body>
 </html>

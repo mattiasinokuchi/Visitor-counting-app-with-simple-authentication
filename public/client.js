@@ -1,4 +1,3 @@
-/*
 const inButton = document.querySelector("#in");
 const outButton = document.querySelector("#out");
 const resetButton = document.querySelector("#reset");
@@ -9,7 +8,6 @@ const inside = document.querySelector("#inside");
 const last = document.querySelector("#lastInQue");
 const first = document.querySelector("#firstInQue");
 const now = new Date(Date.now());
-
 
 function load() {
   fetch("/load").then(function(response) {
@@ -96,7 +94,6 @@ function showTime(time){
 showTime();
 
 window.onload = function () {
-  console.log();
   load();
 }
 
@@ -126,4 +123,3 @@ callButton .addEventListener("click", function(event) {
   event.preventDefault();
   call();
 });
-*/
