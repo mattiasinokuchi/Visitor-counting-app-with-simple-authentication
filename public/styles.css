@@ -1,0 +1,22 @@
+main {
+  margin: auto;
+  width: 90vw;
+  text-align: center;
+  font-size: 5vw;
+}
+
+button {
+  width: 75vw;
+  height: 10vw;
+  font-size: 5vw;
+}
+
+#reset, #unlock {
+  width: 20vw;
+  height: 5vw;
+  font-size: 2vw;
+}
+
+#inside, #lastInQue, #firstInQue {
+  font-size: 10vw;
+}

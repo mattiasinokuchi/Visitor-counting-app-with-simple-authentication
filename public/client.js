@@ -57,8 +57,10 @@ function reset() {
     last.textContent = data.que;
     first.textContent = data.call;
     document.querySelector("#queTime").innerText = 0;
-    inButton.disabled = true;
+    inButton.disabled = false;
+    outButton.disabled = true;
     callButton.disabled = true;
+    queButton.disabled = false;
   });
 }
 
