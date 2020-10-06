@@ -28,7 +28,7 @@ module.exports = {
       next();
       return;
     }
-    if (req.body.username === "Mattias" && req.body.password === "fiol") {
+    if (req.body.username === process.env.un && req.body.password === process.env.pw) {
       req.session.user = { name: req.body.username };
       res.redirect("/");
       next();

@@ -11,9 +11,9 @@ const controller = require('./controller');
 
 // Define router
 router.get("/", controller.home);
-router.get("/auth/login", controller.getLogin);
-router.post("/auth/login", controller.postLogin);
-router.get("/auth/logout", controller.logout);
+router.get("/login", controller.getLogin);
+router.post("/login", controller.postLogin);
+router.get("/logout", controller.logout);
 router.get("/load", controller.load);
 router.get("/let-in", controller.in);
 router.get("/let-out", controller.out);

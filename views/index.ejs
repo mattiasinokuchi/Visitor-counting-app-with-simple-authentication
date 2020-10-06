@@ -12,6 +12,10 @@
         <h1> Discot i Ekedalen </h1>
         <fieldset>
           <legend>Besöksräknare</legend>
+          <p>
+            <span id="inside"></span> inne (totalt 
+            <span id="visits"></span> besök)
+          </p>
           <% if (user) { %>
           <button id="in">Släpp In</button>
           <button id="out">Släpp Ut</button>
@@ -19,16 +23,18 @@
           <button id="in" disabled=true hidden>Släpp In</button>
           <button id="out" disabled=true hidden>Släpp Ut</button>
           <% } %>
-          <p>
-            <span id="inside"></span> inne (totalt 
-            <span id="visits"></span> besök)
-          </p>
       </fieldset>
       <br>
       <fieldset>
         <legend>Köhantering</legend>
         <p>
           Nytt könummer: <span id="lastInQue"></span> 
+        </p>
+        <p>
+          Kallat könummer: <span id="firstInQue"></span> 
+        </p>
+        <p>
+          Kötid: <span id="queTime"></span> minuter 
         </p>
         <% if (user) { %>
         <button id="que">Ge könummer</button>
@@ -37,18 +43,15 @@
         <button id="que" dissabled=true hidden>Ge könummer</button>
         <button id="call" dissabled=true hidden>Kalla könummer</button>
         <% } %>
-        <p>
-          Kallat könummer: <span id="firstInQue"></span> 
-        </p>
-        <p>
-          Kötid: <span id="queTime"></span> minuter 
-        </p>
       </fieldset>
       <% if (user) { %>
-      <p> Hello <%= user.name %>! </p>
-      <p> <a href=/auth/logout> Logout </a> </p>
+      <p>
+        <a href=/logout> Logga ut </a>
+      </p>
       <% } else { %>
-      <p> <a href=/auth/login> Login </a> </p>
+      <p>
+        <a href=/login> Logga in </a>
+      </p>
       <% } %>
       <script src="/client.js"></script>
     </body>
